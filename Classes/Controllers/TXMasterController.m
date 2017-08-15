@@ -178,7 +178,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 #if TEXTUAL_BUILT_WITH_PAID_UPGRADE_DIALOG == 1
 	/* Paid upgrade controller is setup here so license manager has time to load. */
-	[menuController() setupPaidUpgradeController];
+	if ([XRSystemInformation isUsingOSXMavericksOrLater]) {
+		[menuController() setupPaidUpgradeController];
+	}G
 #endif
 
 	[self prepareThirdPartyServices];

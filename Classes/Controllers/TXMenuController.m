@@ -357,9 +357,11 @@ NS_ASSUME_NONNULL_BEGIN
 		{
 			NSTimeInterval currentTime = [[NSDate date] timeIntervalSince1970];
 
-			BOOL condition = [TDCLicenseUpgradeDialog isAvailableDate:currentTime];
+			BOOL condition1 = [TDCLicenseUpgradeDialog isAvailableDate:currentTime];
 
-			menuItem.hidden = (condition == NO);
+			BOOL condition2 = [XRSystemInformation isUsingOSXMavericksOrLater];
+
+			menuItem.hidden = (condition1 == NO || condition2 == NO);
 
 			return YES;
 		}
