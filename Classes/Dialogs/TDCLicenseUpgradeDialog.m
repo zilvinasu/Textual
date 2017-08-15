@@ -369,8 +369,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 	if (licenseKey == nil) {
 		[TLOPopupPrompts sheetWindowWithWindow:self.window
-										  body:TXTLS(@"TDCPaidUpgradeAvailableDialog[1001][2]")
-										 title:TXTLS(@"TDCPaidUpgradeAvailableDialog[1001][1]")
+										  body:TXTLS(@"TDCLicenseUpgradeDialog[1001][2]")
+										 title:TXTLS(@"TDCLicenseUpgradeDialog[1001][1]")
 								 defaultButton:TXTLS(@"Prompts[0005]")
 							   alternateButton:nil
 								   otherButton:nil];
