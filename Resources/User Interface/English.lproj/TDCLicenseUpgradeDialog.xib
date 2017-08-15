@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13178.6"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="TDCLicenseUpgradeDialog">
+            <connections>
+                <outlet property="macAppStoreChoiceSheet" destination="jSe-XU-KqH" id="6af-ny-5W9"/>
+                <outlet property="window" destination="HdJ-EC-5Hp" id="KgZ-6U-XM6"/>
+            </connections>
+        </customObject>
+        <window title="Upgrade Available" allowsToolTipsWhenApplicationIsInactive="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="HdJ-EC-5Hp">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <rect key="contentRect" x="128" y="143" width="501" height="480"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <view key="contentView" id="tU8-UU-9sk">
+                <rect key="frame" x="0.0" y="0.0" width="501" height="480"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gsX-5C-QSw">
+                        <rect key="frame" x="119" y="432" width="264" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="iqH-zI-dp1"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Textual 7 is now available!" id="l8j-fx-jIi">
+                            <font key="font" metaFont="system" size="23"/>
+                            <color key="textColor" red="0.41907269019999999" green="0.41907269019999999" blue="0.41907269019999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NsM-Ji-CY3">
+                        <rect key="frame" x="158" y="261" width="185" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Textual 7 is a paid upgrade." id="bGO-Nn-SqP">
+                            <font key="font" metaFont="systemBold"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AhF-hn-m3i">
+                        <rect key="frame" x="186" y="294" width="130" height="130"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="130" id="Z3f-EB-7Xn"/>
+                            <constraint firstAttribute="height" constant="130" id="qQo-lE-KCG"/>
+                        </constraints>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="applicationIconYosemite" id="h9W-XX-bee"/>
+                    </imageView>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vgN-vT-UXP">
+                        <rect key="frame" x="255" y="52" width="160" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="5ZW-dH-6AD"/>
+                            <constraint firstAttribute="width" constant="160" id="DqX-5y-x5h"/>
+                        </constraints>
+                        <buttonCell key="cell" type="smallSquare" title="Check Eligibility" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yLZ-Ru-LaX">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system" size="14"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="availabilityActionPurchaseUpgrade:" target="-2" id="BLz-pC-EO1"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Aj-KM-pLf">
+                        <rect key="frame" x="255" y="90" width="160" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="DaS-Ob-YOG"/>
+                            <constraint firstAttribute="width" constant="160" id="WKi-aK-NJA"/>
+                        </constraints>
+                        <buttonCell key="cell" type="smallSquare" title="Download" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zzY-0s-LGm">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system" size="14"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="availabilityActionDownloadTrial:" target="-2" id="uFX-Jw-AWO"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iR4-dD-yZU">
+                        <rect key="frame" x="86" y="52" width="160" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="CuH-lm-IBz"/>
+                            <constraint firstAttribute="width" constant="160" id="nwO-oQ-K8K"/>
+                        </constraints>
+                        <buttonCell key="cell" type="smallSquare" title="Remind Me Later" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="f6e-Uh-DQR">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system" size="14"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="availabilityActionRemindMeLater:" target="-2" id="Lkc-aM-pUc"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AX9-hH-yU2">
+                        <rect key="frame" x="86" y="90" width="160" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="160" id="Dxo-Ad-k5K"/>
+                            <constraint firstAttribute="height" constant="30" id="gSl-RJ-9EK"/>
+                        </constraints>
+                        <buttonCell key="cell" type="smallSquare" title="Learn More" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jB8-kl-mra">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system" size="14"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="availabilityActionLearnMore:" target="-2" id="RK8-lU-whO"/>
+                        </connections>
+                    </button>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="mMo-C6-86Y">
+                        <rect key="frame" x="153" y="18" width="196" height="18"/>
+                        <buttonCell key="cell" type="check" title="Never show this dialog again" bezelStyle="regularSquare" imagePosition="left" inset="2" id="HxA-oJ-Zci">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="availabilityActionRemindMeNever:" target="-2" id="yqZ-cC-yfl"/>
+                        </connections>
+                    </button>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdl-wG-jwL">
+                        <rect key="frame" x="18" y="143" width="465" height="102"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="461" id="3r4-PL-u1L"/>
+                        </constraints>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="dyx-Li-7j2">
+                            <font key="font" metaFont="system"/>
+                            <string key="title">Textual 7, the next generation of the app, is now available as a paid upgrade.
+
+To make this upgrade as smooth as possible, you may be eligible for a free or discounted upgrade; depending on when you purchased the app. 
+
+Click “Check Eligibility” to find out which you are eligible for.</string>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="NsM-Ji-CY3" firstAttribute="centerX" secondItem="tU8-UU-9sk" secondAttribute="centerX" id="0ce-M1-HUS"/>
+                    <constraint firstItem="5Aj-KM-pLf" firstAttribute="top" secondItem="hdl-wG-jwL" secondAttribute="bottom" constant="22" id="A9Z-PP-9Xg"/>
+                    <constraint firstItem="AX9-hH-yU2" firstAttribute="top" secondItem="hdl-wG-jwL" secondAttribute="bottom" constant="22" id="FPi-MA-OlH"/>
+                    <constraint firstItem="gsX-5C-QSw" firstAttribute="top" secondItem="tU8-UU-9sk" secondAttribute="top" constant="20" id="FbS-78-diF"/>
+                    <constraint firstItem="AX9-hH-yU2" firstAttribute="leading" secondItem="tU8-UU-9sk" secondAttribute="leading" constant="86" id="Kfx-im-BQU"/>
+                    <constraint firstItem="gsX-5C-QSw" firstAttribute="centerX" secondItem="tU8-UU-9sk" secondAttribute="centerX" id="ZrQ-lo-7Tk"/>
+                    <constraint firstItem="hdl-wG-jwL" firstAttribute="centerX" secondItem="tU8-UU-9sk" secondAttribute="centerX" id="cf7-qZ-LRU"/>
+                    <constraint firstItem="AhF-hn-m3i" firstAttribute="top" secondItem="gsX-5C-QSw" secondAttribute="bottom" constant="8" id="f2s-FJ-HWy"/>
+                    <constraint firstItem="mMo-C6-86Y" firstAttribute="centerX" secondItem="tU8-UU-9sk" secondAttribute="centerX" id="hDi-Bx-jt6"/>
+                    <constraint firstItem="vgN-vT-UXP" firstAttribute="leading" secondItem="iR4-dD-yZU" secondAttribute="trailing" constant="9" id="hfb-jP-BbR"/>
+                    <constraint firstItem="vgN-vT-UXP" firstAttribute="top" secondItem="5Aj-KM-pLf" secondAttribute="bottom" constant="8" id="hz4-bq-sPb"/>
+                    <constraint firstItem="iR4-dD-yZU" firstAttribute="leading" secondItem="AX9-hH-yU2" secondAttribute="leading" id="pQh-bn-0S9"/>
+                    <constraint firstItem="NsM-Ji-CY3" firstAttribute="top" secondItem="AhF-hn-m3i" secondAttribute="bottom" constant="16" id="s6y-5I-X25"/>
+                    <constraint firstItem="5Aj-KM-pLf" firstAttribute="leading" secondItem="AX9-hH-yU2" secondAttribute="trailing" constant="9" id="vJk-LV-lU7"/>
+                    <constraint firstAttribute="bottom" secondItem="mMo-C6-86Y" secondAttribute="bottom" constant="20" id="wTN-mq-w7L"/>
+                    <constraint firstItem="iR4-dD-yZU" firstAttribute="top" secondItem="AX9-hH-yU2" secondAttribute="bottom" constant="8" id="x6B-Hp-rrA"/>
+                    <constraint firstItem="hdl-wG-jwL" firstAttribute="top" secondItem="NsM-Ji-CY3" secondAttribute="bottom" constant="16" id="xt3-He-TtW"/>
+                    <constraint firstItem="mMo-C6-86Y" firstAttribute="top" secondItem="iR4-dD-yZU" secondAttribute="bottom" constant="19" id="xuk-uI-uxB"/>
+                    <constraint firstItem="AhF-hn-m3i" firstAttribute="centerX" secondItem="tU8-UU-9sk" secondAttribute="centerX" id="zEF-Ol-gUq"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="SaY-pC-Vax"/>
+            </connections>
+            <point key="canvasLocation" x="-172" y="357"/>
+        </window>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="jSe-XU-KqH" userLabel="App Store Sheet">
+            <windowStyleMask key="styleMask" titled="YES"/>
+            <rect key="contentRect" x="128" y="143" width="415" height="406"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <view key="contentView" id="Tuy-xT-ZvM">
+                <rect key="frame" x="0.0" y="0.0" width="415" height="406"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hf2-gW-bh0">
+                        <rect key="frame" x="18" y="352" width="379" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="375" id="o7L-q7-ZhB"/>
+                        </constraints>
+                        <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="To check your discount eligibility, you will first need to install Textual 7, whose download is free." id="XUa-Ef-BeM">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QPa-RQ-scz">
+                        <rect key="frame" x="18" y="149" width="379" height="119"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="375" id="Opr-id-p3w"/>
+                        </constraints>
+                        <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" id="a5C-Ld-wAQ">
+                            <font key="font" metaFont="system"/>
+                            <string key="title">Once installed and launched, you will be presented with a dialog asking you to unlock Textual 7. 
+
+In this dialog, click the “Check Eligibility” button to check your discount eligibility.
+
+See the following image for a visual reference:</string>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="Zap-f8-68n">
+                        <rect key="frame" x="122" y="288" width="171" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="171" id="LXO-YM-ZeP"/>
+                            <constraint firstAttribute="height" constant="44" id="a6x-8T-Pl2"/>
+                        </constraints>
+                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Download_on_the_Mac_App_Store_Badge" imagePosition="only" alignment="center" controlSize="mini" imageScaling="proportionallyUpOrDown" inset="2" id="1VW-ge-Cbn">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="miniSystem"/>
+                        </buttonCell>
+                        <accessibility description="Download on the Mac App Store"/>
+                        <connections>
+                            <action selector="macAppStoreChoiceActionDownload:" target="-2" id="2Sf-F8-u8f"/>
+                        </connections>
+                    </button>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="smV-0r-16w">
+                        <rect key="frame" x="20" y="61" width="375" height="68"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="68" id="8js-xg-mvg"/>
+                            <constraint firstAttribute="width" constant="375" id="DhR-t1-Eo5"/>
+                        </constraints>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="InAppPurchaseUpgradeFromTextual6Example" id="o2J-5T-0uH"/>
+                    </imageView>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fu8-8N-Vpt">
+                        <rect key="frame" x="170" y="13" width="75" height="32"/>
+                        <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kcl-F6-FH6">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="macAppStoreChoiceActionClose:" target="-2" id="oww-F7-LNV"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Zap-f8-68n" firstAttribute="centerX" secondItem="Tuy-xT-ZvM" secondAttribute="centerX" id="2DQ-Az-UtN"/>
+                    <constraint firstItem="Zap-f8-68n" firstAttribute="top" secondItem="hf2-gW-bh0" secondAttribute="bottom" constant="20" id="2J8-Od-Duz"/>
+                    <constraint firstItem="hf2-gW-bh0" firstAttribute="centerX" secondItem="Tuy-xT-ZvM" secondAttribute="centerX" id="2MV-ut-vjN"/>
+                    <constraint firstItem="QPa-RQ-scz" firstAttribute="top" secondItem="Zap-f8-68n" secondAttribute="bottom" constant="20" id="K3U-oh-ybB"/>
+                    <constraint firstItem="hf2-gW-bh0" firstAttribute="top" secondItem="Tuy-xT-ZvM" secondAttribute="top" constant="20" id="RUQ-u6-gpb"/>
+                    <constraint firstItem="fu8-8N-Vpt" firstAttribute="centerX" secondItem="Tuy-xT-ZvM" secondAttribute="centerX" id="Sb0-ka-H57"/>
+                    <constraint firstItem="fu8-8N-Vpt" firstAttribute="top" secondItem="smV-0r-16w" secondAttribute="bottom" constant="20" id="cFI-Lz-dej"/>
+                    <constraint firstAttribute="bottom" secondItem="fu8-8N-Vpt" secondAttribute="bottom" constant="20" id="csb-UY-fJM"/>
+                    <constraint firstItem="smV-0r-16w" firstAttribute="centerX" secondItem="Tuy-xT-ZvM" secondAttribute="centerX" id="gGX-8C-m4q"/>
+                    <constraint firstItem="QPa-RQ-scz" firstAttribute="centerX" secondItem="Tuy-xT-ZvM" secondAttribute="centerX" id="gaG-dg-hTj"/>
+                    <constraint firstItem="smV-0r-16w" firstAttribute="top" secondItem="QPa-RQ-scz" secondAttribute="bottom" constant="20" id="mbf-4r-fIN"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="-357.5" y="202"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="Download_on_the_Mac_App_Store_Badge" width="165" height="40"/>
+        <image name="InAppPurchaseUpgradeFromTextual6Example" width="916" height="164"/>
+        <image name="applicationIconYosemite" width="512" height="512"/>
+    </resources>
+</document>

@@ -42,6 +42,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) NSString *pointedNickname; // Takes priority if sender of an action returns nil userInfo value
 @property (nonatomic, strong) TDCFileTransferDialog *fileTransferController;
 
+#if TEXTUAL_BUILT_WITH_PAID_UPGRADE_DIALOG == 1
+@property (nonatomic, strong) TDCLicenseUpgradeDialog *paidUpgradeController;
+
+- (void)setupPaidUpgradeController;
+#endif
+
 - (void)mainWindowSelectionDidChange;
 
 - (void)populateNavgiationChannelList;

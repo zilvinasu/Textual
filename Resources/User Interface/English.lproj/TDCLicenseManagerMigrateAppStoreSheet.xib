@@ -28,7 +28,7 @@
                 <subviews>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F12-H0-P9Z">
                         <rect key="frame" x="18" y="125" width="330" height="34"/>
-                        <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" title="Enter the name and e-mail address that you would like to be associated with your free license key. " id="fYJ-sf-Wdh">
+                        <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" title="Enter the name and e-mail address that you would like to be associated with your license key. " id="fYJ-sf-Wdh">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

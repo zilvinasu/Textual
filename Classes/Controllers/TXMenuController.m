@@ -111,6 +111,13 @@ NS_ASSUME_NONNULL_BEGIN
 	[self.fileTransferController startUsingDownloadDestinationURL];
 }
 
+#if TEXTUAL_BUILT_WITH_PAID_UPGRADE_DIALOG == 1
+- (void)setupPaidUpgradeController
+{
+	self.paidUpgradeController = [TDCLicenseUpgradeDialog new];
+}
+#endif
+
 - (void)prepareForApplicationTermination
 {
 	[self.fileTransferController prepareForApplicationTermination];
@@ -285,6 +292,7 @@ NS_ASSUME_NONNULL_BEGIN
 					case 101: // "Preferences…"
 					case 102: // "Manage license…"
 					case 109: // "Check for updates…"
+					case 820: // "Upgrade Dialog"
 					{
 						returnValue = YES;
 					}
@@ -319,6 +327,7 @@ NS_ASSUME_NONNULL_BEGIN
 					case 801: // "Zoom"
 					case 808: // "Main Window"
 					case 814: // "Bring All to Front"
+					case 820: // "Upgrade Dialog"
 					case 924: // "Export Preferences"
 					{
 						returnValue = YES;
@@ -344,6 +353,16 @@ NS_ASSUME_NONNULL_BEGIN
 	}
 
 	switch (tag) {
+		case 820: // "Upgrade Dialog"
+		{
+			NSTimeInterval currentTime = [[NSDate date] timeIntervalSince1970];
+
+			BOOL condition = [TDCLicenseUpgradeDialog isAvailableDate:currentTime];
+
+			menuItem.hidden = (condition == NO);
+
+			return YES;
+		}
 		case 109: // "Check for Updates"
 		{
 #if TEXTUAL_BUILT_WITH_SPARKLE_ENABLED == 0
@@ -3568,6 +3587,14 @@ NS_ASSUME_NONNULL_BEGIN
 #if TEXTUAL_BUILT_WITH_SPARKLE_ENABLED == 1
 	[[SUUpdater sharedUpdater] checkForUpdates:sender];
 #endif
+}
+
+#pragma mark -
+#pragma mark Upgrade Dialog
+
+- (void)showUpgradeDialog:(id)sender
+{
+	[self.paidUpgradeController show];
 }
 
 @end

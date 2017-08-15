@@ -167,6 +167,7 @@ NS_ASSUME_NONNULL_BEGIN
 	812: "Highlight List"
 	813: "File Transfers"
 	815: "Buddy List"
+    820: "Upgrade Dialog"
 	819: "-"
 	814: "Bring All to Front"
 
@@ -415,6 +416,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (IBAction)showServerHighlightList:(id)sender;
 - (IBAction)showServerPropertiesSheet:(id)sender;
 - (IBAction)showSetVhostPrompt:(id)sender;
+- (IBAction)showUpgradeDialog:(id)sender;
 - (IBAction)showWelcomeSheet:(id)sender;
 
 - (IBAction)sortChannelListNames:(id)sender;

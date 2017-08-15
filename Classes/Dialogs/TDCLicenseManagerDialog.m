@@ -240,7 +240,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 	self.licenseManagerDownloader = [TLOLicenseManagerDownloader new];
 
-	self.licenseManagerDownloader.completionBlock = ^(BOOL operationSuccessful) {
+	self.licenseManagerDownloader.actionBlock = ^BOOL(NSUInteger statusCode, id _Nullable statusContext) {
+		return TLOLicenseManagerUserLicenseWriteFileContents(statusContext);
+	};
+
+	self.licenseManagerDownloader.completionBlock = ^(BOOL operationSuccessful, NSUInteger statusCode, id _Nullable statusContext) {
 		[weakSelf licenseManagerDownloaderCompletionBlock];
 
 		if (operationSuccessful) {
@@ -273,7 +277,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 	self.licenseManagerDownloader = [TLOLicenseManagerDownloader new];
 
-	self.licenseManagerDownloader.completionBlock = ^(BOOL operationSuccessful) {
+	self.licenseManagerDownloader.completionBlock = ^(BOOL operationSuccessful, NSUInteger statusCode, id _Nullable statusContext) {
 		[weakSelf licenseManagerDownloaderCompletionBlock];
 	};
 
@@ -312,7 +316,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 	self.licenseManagerDownloader = [TLOLicenseManagerDownloader new];
 
-	self.licenseManagerDownloader.completionBlock = ^(BOOL operationSuccessful) {
+	self.licenseManagerDownloader.actionBlock = ^BOOL(NSUInteger statusCode, id _Nullable statusContext) {
+		return TLOLicenseManagerDeleteUserLicenseFile();
+	};
+
+	self.licenseManagerDownloader.completionBlock = ^(BOOL operationSuccessful, NSUInteger statusCode, id _Nullable statusContext) {
 		[weakSelf licenseManagerDownloaderCompletionBlock];
 
 		[weakSelf reloadMainWindowLoadingScreen];
@@ -344,7 +352,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 	self.licenseManagerDownloader = [TLOLicenseManagerDownloader new];
 
-	self.licenseManagerDownloader.completionBlock = ^(BOOL operationSuccessful) {
+	self.licenseManagerDownloader.completionBlock = ^(BOOL operationSuccessful, NSUInteger statusCode, id _Nullable statusContext) {
 		[weakSelf licenseManagerDownloaderCompletionBlock];
 	};
 

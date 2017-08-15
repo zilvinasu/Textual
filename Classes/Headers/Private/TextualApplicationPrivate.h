@@ -45,6 +45,22 @@
 @class TXMenuControllerMainWindowProxy;
 @class TXWindowController;
 
+#ifdef TEXTUAL_BUILT_FOR_APP_STORE_DISTRIBUTION
+    #if TEXTUAL_BUILT_FOR_APP_STORE_DISTRIBUTION == 1
+        #define TEXTUAL_BUILT_WITH_PAID_UPGRADE_DIALOG 1
+    #endif
+#endif
+
+#ifdef TEXTUAL_BUILT_WITH_LICENSE_MANAGER
+    #if TEXTUAL_BUILT_WITH_LICENSE_MANAGER == 1
+        #define TEXTUAL_BUILT_WITH_PAID_UPGRADE_DIALOG 1
+    #endif
+#endif
+
+#ifndef TEXTUAL_BUILT_WITH_PAID_UPGRADE_DIALOG
+#define TEXTUAL_BUILT_WITH_PAID_UPGRADE_DIALOG 0
+#endif
+
 #import "TextualApplication.h"
 
 #if __has_include("BuildConfig.h")
@@ -94,6 +110,8 @@
 #import "TDCLicenseManagerDialogPrivate.h"
 #import "TDCLicenseManagerMigrateAppStoreSheetPrivate.h"
 #import "TDCLicenseManagerRecoverLostLicenseSheetPrivate.h"
+#import "TDCLicenseUpgradeDialogPrivate.h"
+#import "TDCLicenseUpgradeEligibilitySheetPrivate.h"
 #import "TDCNicknameColorSheetPrivate.h"
 #import "TDCPreferencesControllerPrivate.h"
 #import "TDCPreferencesSoundWrapperPrivate.h"

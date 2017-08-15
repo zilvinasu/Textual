@@ -5,7 +5,7 @@
                    | |  __/>  <| |_| |_| | (_| | |
                    |_|\___/_/\_\\__|\__,_|\__,_|_|
 
- Copyright (c) 2010 - 2015 Codeux Software, LLC & respective contributors.
+ Copyright (c) 2010 - 2017 Codeux Software, LLC & respective contributors.
         Please see Acknowledgements.pdf for additional information.
 
  Redistribution and use in source and binary forms, with or without
@@ -37,43 +37,37 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSUInteger, TLOLicenseManagerDownloaderRequestType) {
-	TLOLicenseManagerDownloaderRequestActivationType,
-	TLOLicenseManagerDownloaderRequestMigrateAppStoreType,
-	TLOLicenseManagerDownloaderRequestSendLostLicenseType,
-	TLOLicenseManagerDownloaderRequestLicenseUpgradeEligibilityType,
-	TLOLicenseManagerDownloaderRequestReceiptUpgradeEligibilityType
+#if TEXTUAL_BUILT_WITH_LICENSE_MANAGER == 1
+typedef NS_ENUM(NSUInteger, TLOLicenseUpgradeEligibility) {
+	TLOLicenseUpgradeEligibilityUnknown = LONG_MAX,
+	TLOLicenseUpgradeNotEligible = 0,
+	TLOLicenseUpgradeEligibleDiscount = 1,
+	TLOLicenseUpgradeEligibleFree = 3,
+	TLOLicenseUpgradeAlreadyUpgraded = 2,
 };
 
-TEXTUAL_EXTERN NSUInteger const TLOLicenseManagerDownloaderRequestStatusCodeSuccess;
-TEXTUAL_EXTERN NSUInteger const TLOLicenseManagerDownloaderRequestStatusCodeGenericError;
-TEXTUAL_EXTERN NSUInteger const TLOLicenseManagerDownloaderRequestStatusCodeTryAgainLater;
+@protocol TDCLicenseUpgradeEligibilitySheetDelegate;
 
-typedef BOOL (^TLOLicenseManagerDownloaderActionBlock)(NSUInteger statusCode, id _Nullable statusContext);
-typedef BOOL (^TLOLicenseManagerDownloaderErrorBlock)(NSUInteger statusCode, id _Nullable statusContext);
-typedef void (^TLOLicenseManagerDownloaderCompletionBlock)(BOOL resultSuccessful, NSUInteger statusCode, id _Nullable statusContext);
+@interface TDCLicenseUpgradeEligibilitySheet : TDCSheetBase
+@property (readonly, copy) NSString *licenseKey;
+@property (readonly) TLOLicenseUpgradeEligibility eligibility;
 
-@interface TLOLicenseManagerDownloader : NSObject
-@property (nonatomic, copy, nullable) TLOLicenseManagerDownloaderActionBlock actionBlock;
-@property (nonatomic, copy, nullable) TLOLicenseManagerDownloaderActionBlock errorBlock;
-@property (nonatomic, copy, nullable) TLOLicenseManagerDownloaderCompletionBlock completionBlock;
-@property (nonatomic, assign) BOOL isSilentOnFailure;
-@property (nonatomic, assign) BOOL isSilentOnSuccess;
+- (instancetype)initWithLicenseKey:(NSString *)licenseKey NS_DESIGNATED_INITIALIZER;
 
-- (void)activateLicense:(NSString *)licenseKey;
-
-- (void)deactivateLicense;
-
-- (void)checkUpgradeEligibilityOfLicense:(NSString *)licenseKey;
-- (void)checkUpgradeEligibilityOfReceipt:(NSString *)receiptData;
-
-- (void)requestLostLicenseKeyForContactAddress:(NSString *)contactAddress;
-
-- (void)migrateMacAppStorePurcahse:(NSString *)receiptData
-				  licenseOwnerName:(NSString *)licenseOwnerName
-		licenseOwnerContactAddress:(NSString *)licenseOwnerContactAddress;
-
-- (void)cancelRequest;
+- (void)checkEligibility;
 @end
+
+@protocol TDCLicenseUpgradeEligibilitySheetDelegate <NSObject>
+@required
+
+- (void)upgradeEligibilitySheetContactSupport:(TDCLicenseUpgradeEligibilitySheet *)sender;
+- (void)upgradeEligibilitySheetDownloadTrial:(TDCLicenseUpgradeEligibilitySheet *)sender;
+- (void)upgradeEligibilitySheetPurchaseUpgrade:(TDCLicenseUpgradeEligibilitySheet *)sender;
+- (void)upgradeEligibilitySheetPurchaseMacAppStore:(TDCLicenseUpgradeEligibilitySheet *)sender;
+- (void)upgradeEligibilitySheetPurchaseStandalone:(TDCLicenseUpgradeEligibilitySheet *)sender;
+- (void)upgradeEligibilitySheetChanged:(TDCLicenseUpgradeEligibilitySheet *)sender;
+- (void)upgradeEligibilitySheetWillClose:(TDCLicenseUpgradeEligibilitySheet *)sender;
+@end
+#endif
 
 NS_ASSUME_NONNULL_END
