@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment version="1080" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13178.6"/>
         <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TXMasterController">
@@ -1140,7 +1141,7 @@
                 </connections>
             </menu>
         </menuItem>
-        <window title="Textual" allowsToolTipsWhenApplicationIsInactive="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="Yum-Vp-Zoi" userLabel="Window" customClass="TVCMainWindow">
+        <window title="Textual 6" allowsToolTipsWhenApplicationIsInactive="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="Yum-Vp-Zoi" userLabel="Window" customClass="TVCMainWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
             <rect key="contentRect" x="455" y="163" width="800" height="477"/>
@@ -1161,7 +1162,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="608" height="19"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <textView editable="NO" selectable="NO" drawsBackground="NO" importsGraphics="NO" continuousSpellChecking="YES" allowsUndo="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" grammarChecking="YES" smartInsertDelete="YES" id="AbN-7J-waj" customClass="TVCMainWindowTextView">
+                                                <textView editable="NO" selectable="NO" drawsBackground="NO" importsGraphics="NO" verticallyResizable="YES" continuousSpellChecking="YES" allowsUndo="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" grammarChecking="YES" smartInsertDelete="YES" id="AbN-7J-waj" customClass="TVCMainWindowTextView">
                                                     <rect key="frame" x="0.0" y="0.0" width="608" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1197,7 +1198,7 @@
                                 </constraints>
                             </customView>
                             <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ijw-SU-h2Z" customClass="TVCMainWindowSegmentedController">
-                                <rect key="frame" x="10" y="5" width="150" height="25"/>
+                                <rect key="frame" x="10" y="6" width="150" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="rAs-uE-LJj"/>
                                 </constraints>
@@ -1261,7 +1262,7 @@
                                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
                                                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                                 <tableColumns>
-                                                                    <tableColumn width="147" minWidth="40" maxWidth="1000" id="uPw-dS-cnM">
+                                                                    <tableColumn identifier="" width="147" minWidth="40" maxWidth="1000" id="uPw-dS-cnM">
                                                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                                                             <font key="font" metaFont="smallSystem"/>
                                                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -1541,20 +1542,20 @@
                                     <rect key="frame" x="160" y="23" width="480" height="393"/>
                                     <subviews>
                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="z5g-nn-uR2">
-                                            <rect key="frame" x="27" y="195" width="426" height="36"/>
-                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Your trial of Textual has expired!" id="gyi-Rc-8RN">
+                                            <rect key="frame" x="23" y="195" width="434" height="36"/>
+                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Your trial of Textual 6 has expired!" id="gyi-Rc-8RN">
                                                 <font key="font" metaFont="system" size="30"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X5b-Hf-lZT">
-                                            <rect key="frame" x="50" y="136" width="365" height="51"/>
+                                            <rect key="frame" x="38" y="136" width="404" height="51"/>
                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="vbc-qs-WGF">
                                                 <font key="font" metaFont="system"/>
-                                                <string key="title">Thank you for trying Textual for the past 30 days. 
+                                                <string key="title">Thank you for trying Textual 6 for the past 30 days. 
 
-To continue using Textual, you will need to purchase it.</string>
+To continue using Textual 6, you will need to purchase it.</string>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -1585,15 +1586,15 @@ To continue using Textual, you will need to purchase it.</string>
                                             </constraints>
                                         </box>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2b8-pr-Jam">
-                                            <rect key="frame" x="144" y="53" width="192" height="17"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Already own a copy of Textual?" id="6N2-Zv-9zs">
+                                            <rect key="frame" x="138" y="53" width="204" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Already own a copy of Textual 6?" id="6N2-Zv-9zs">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nls-AL-Ptc">
-                                            <rect key="frame" x="172" y="13" width="137" height="32"/>
+                                            <rect key="frame" x="172" y="13" width="136" height="32"/>
                                             <buttonCell key="cell" type="push" title="Activate Textual" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="WGZ-1I-T49">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -1609,7 +1610,7 @@ To continue using Textual, you will need to purchase it.</string>
                                         <constraint firstAttribute="bottom" secondItem="Nls-AL-Ptc" secondAttribute="bottom" constant="20" symbolic="YES" id="9oD-Ki-b4L"/>
                                         <constraint firstItem="1yY-o9-6LP" firstAttribute="centerX" secondItem="pfS-mQ-kGx" secondAttribute="centerX" id="D6T-Ou-zGk"/>
                                         <constraint firstItem="Nls-AL-Ptc" firstAttribute="top" secondItem="2b8-pr-Jam" secondAttribute="bottom" constant="12" id="GAz-4t-Vsi"/>
-                                        <constraint firstAttribute="trailing" secondItem="X5b-Hf-lZT" secondAttribute="trailing" constant="67" id="IWB-Ku-Qby"/>
+                                        <constraint firstAttribute="trailing" secondItem="X5b-Hf-lZT" secondAttribute="trailing" constant="40" id="IWB-Ku-Qby"/>
                                         <constraint firstItem="z5g-nn-uR2" firstAttribute="top" secondItem="be0-qc-Z4Y" secondAttribute="bottom" constant="8" id="K54-8M-YNo"/>
                                         <constraint firstItem="1yY-o9-6LP" firstAttribute="centerX" secondItem="2b8-pr-Jam" secondAttribute="centerX" id="M12-cE-xln"/>
                                         <constraint firstItem="be0-qc-Z4Y" firstAttribute="top" secondItem="qAL-J6-fow" secondAttribute="top" constant="2" id="Mgn-3f-Akn"/>
@@ -1620,7 +1621,7 @@ To continue using Textual, you will need to purchase it.</string>
                                         <constraint firstItem="X5b-Hf-lZT" firstAttribute="top" secondItem="z5g-nn-uR2" secondAttribute="bottom" constant="8" id="htt-Uo-mIO"/>
                                         <constraint firstItem="1yY-o9-6LP" firstAttribute="top" secondItem="pfS-mQ-kGx" secondAttribute="bottom" constant="18" id="iaZ-Cn-10M"/>
                                         <constraint firstAttribute="height" constant="393" id="itc-VX-fi9"/>
-                                        <constraint firstItem="X5b-Hf-lZT" firstAttribute="leading" secondItem="qAL-J6-fow" secondAttribute="leading" constant="52" id="jQy-97-UlD"/>
+                                        <constraint firstItem="X5b-Hf-lZT" firstAttribute="leading" secondItem="qAL-J6-fow" secondAttribute="leading" constant="40" id="jQy-97-UlD"/>
                                         <constraint firstItem="2b8-pr-Jam" firstAttribute="top" secondItem="1yY-o9-6LP" secondAttribute="bottom" constant="15" id="kro-I4-jeP"/>
                                         <constraint firstAttribute="centerX" secondItem="z5g-nn-uR2" secondAttribute="centerX" id="sgf-wT-nTZ"/>
                                         <constraint firstItem="1yY-o9-6LP" firstAttribute="leading" secondItem="qAL-J6-fow" secondAttribute="leading" constant="33" id="uT6-Lz-0BQ"/>
@@ -1639,8 +1640,8 @@ To continue using Textual, you will need to purchase it.</string>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="applicationIconYosemite" id="rVN-qv-5o0"/>
                                         </imageView>
                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oUM-ya-bcb">
-                                            <rect key="frame" x="109" y="112" width="264" height="36"/>
-                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Welcome to Textual" id="JBc-QO-7M0">
+                                            <rect key="frame" x="102" y="112" width="279" height="36"/>
+                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Welcome to Textual 6" id="JBc-QO-7M0">
                                                 <font key="font" metaFont="system" size="30"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1687,8 +1688,8 @@ To continue using Textual, you will need to purchase it.</string>
                                     <rect key="frame" x="237" y="97" width="326" height="244"/>
                                     <subviews>
                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ufd-37-aMI">
-                                            <rect key="frame" x="31" y="38" width="264" height="36"/>
-                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Welcome to Textual" id="LRW-p3-IVK">
+                                            <rect key="frame" x="24" y="38" width="279" height="36"/>
+                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Welcome to Textual 6" id="LRW-p3-IVK">
                                                 <font key="font" metaFont="system" size="30"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
